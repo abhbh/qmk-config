@@ -1,1 +1,4 @@
 LTO_ENABLE = yes
+
+MOUSEKEY_ENABLE = no
+OLED_ENABLE = no
