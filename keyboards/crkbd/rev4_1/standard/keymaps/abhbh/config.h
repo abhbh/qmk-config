@@ -42,5 +42,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_VAL_STEP 17
 #endif
 
-// Enable tap-holds to be emitted as holds if followed with other keys
+// Drop all OSMs after a time (in ms)
+#define ONESHOT_TIMEOUT 3000
+
+// For certain keys, make tap-holds emit hold if another key is pressed quickly
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
