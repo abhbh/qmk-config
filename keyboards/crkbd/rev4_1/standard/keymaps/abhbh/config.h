@@ -43,4 +43,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 // Enable tap-holds to be emitted as holds if followed with other keys
-#define HOLD_ON_OTHER_KEY_PRESS
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
