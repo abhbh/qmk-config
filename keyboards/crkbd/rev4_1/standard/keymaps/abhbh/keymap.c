@@ -6,7 +6,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // -----> Base layer <-----
     [0] = LAYOUT_split_3x6_3_ex2(
                KC_TAB, KC_Q, KC_W, KC_F, KC_P,  KC_B, KC_LALT, /* |-----| */ KC_RCTL,    KC_J,    KC_L,       KC_U,    KC_Y, KC_QUOT,      KC_BSPC,
-               KC_ESC, KC_A, KC_R, KC_S, KC_T,  KC_G,  OSL(4), /* |-----| */ KC_LGUI,    KC_M,    KC_N,       KC_E,    KC_I,    KC_O,       KC_ENT,
+               KC_ESC, KC_A, KC_R, KC_S, KC_T,  KC_G,  OSL(5), /* |-----| */ KC_LGUI,    KC_M,    KC_N,       KC_E,    KC_I,    KC_O,       KC_ENT,
         OSM(MOD_RSFT), KC_Z, KC_X, KC_C, KC_D,  KC_V, /* //////-------------\\\\\\ */    KC_K,    KC_H,    KC_COMM,  KC_DOT, KC_SLSH, LT(5,KC_APP),
                                 OSM(MOD_LCTL), MO(1),  KC_SPC, /* /-----\ */ OSM(MOD_LSFT), MO(2), OSM(MOD_LALT)),
 
@@ -42,8 +42,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [5] = LAYOUT_split_3x6_3_ex2(
         KC_TRNS, A(KC_TAB),   C(G(KC_2)), C(G(KC_3)),   C(G(KC_4)), C(G(KC_5)), KC_TRNS, /* |-----| */   KC_NO, KC_PAST,  KC_P7, KC_P8, KC_P9, KC_PMNS, KC_TRNS,
         KC_TRNS, A(KC_ESC),   C(G(KC_6)), C(G(KC_7)),   C(G(KC_8)), C(G(KC_9)), KC_TRNS, /* |-----| */   KC_NO,   KC_P0,  KC_P4, KC_P5, KC_P6, KC_PPLS, KC_TRNS,
-        KC_TRNS,    KC_ESC, LSG(KC_LEFT),     KC_TAB, LSG(KC_RGHT), C(G(KC_0)), /* /////---------------\\\\\ */ KC_PSLS,  KC_P1, KC_P2, KC_P3, KC_PDOT,   TG(4),
-                                                            KC_TRNS,     TG(4), KC_TRNS, /* /-----\ */ KC_PENT,  KC_NUM, KC_ESC),
+        KC_TRNS,    KC_ESC, LSG(KC_LEFT),     KC_TAB, LSG(KC_RGHT), C(G(KC_0)), /* /////---------------\\\\\ */ KC_PSLS,  KC_P1, KC_P2, KC_P3, KC_PDOT,   TG(5),
+                                                            KC_TRNS,     TG(5), KC_TRNS, /* /-----\ */ KC_PENT,  KC_NUM, KC_ESC),
 
 // -----> Legacy layer <-----
     [6] = LAYOUT_split_3x6_3_ex2(
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT(4,KC_APP):
+        case LT(5,KC_APP):
             // Immediately select the hold action when another key is pressed.
             return true;
         default:

@@ -43,10 +43,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 // Drop all OSMs after a time (in ms)
-#define ONESHOT_TIMEOUT 3000
+#define ONESHOT_TIMEOUT 2500
 
 // For certain keys, make tap-holds emit hold if another key is pressed quickly
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
-// Enable Caps Word on double tapping Left Shift
+// Trigger Caps Word on double tapping thumb shift
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
