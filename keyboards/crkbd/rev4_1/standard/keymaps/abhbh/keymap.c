@@ -33,9 +33,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // -----> Numbers layer <-----
     [4] = LAYOUT_split_3x6_3_ex2(
-        QK_BOOT,          KC_1,          KC_2,          KC_3,          KC_4,          KC_5, KC_NO, /* |-----| */ KC_NO,    KC_6, KC_7, KC_8, KC_9,    KC_0,  KC_TRNS,
-          KC_NO, OSM(MOD_LGUI), OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),  OSM(MOD_MEH), KC_NO, /* |-----| */ KC_NO,    KC_0, KC_4, KC_5, KC_6, KC_COMM,  KC_TRNS,
-          KC_NO,        KC_ESC,        KC_DEL,        KC_TAB,        KC_ENT,        QK_REP, /* ///---------------\\\ */ QK_AREP, KC_1, KC_2, KC_3,  KC_DOT,   KC_APP,
+        KC_TRNS,          KC_1,          KC_2,          KC_3,          KC_4,          KC_5, KC_NO, /* |-----| */ KC_NO,    KC_6, KC_7, KC_8, KC_9,    KC_0,  KC_TRNS,
+        KC_TRNS, OSM(MOD_LGUI), OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),  OSM(MOD_MEH), KC_NO, /* |-----| */ KC_NO,    KC_0, KC_4, KC_5, KC_6, KC_COMM,  KC_TRNS,
+        KC_TRNS,        KC_ESC,        KC_DEL,        KC_TAB,        KC_ENT,        QK_REP, /* ///---------------\\\ */ QK_AREP, KC_1, KC_2, KC_3,  KC_DOT,   KC_APP,
                                                                             KC_NO, KC_TRNS, KC_NO, /* /-----\ */ KC_TRNS,  KC_0, KC_NO),
 
 // -----> Workspace Management and Numpad layer <-----
@@ -43,14 +43,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, A(KC_TAB),   C(G(KC_2)), C(G(KC_3)),   C(G(KC_4)), C(G(KC_5)), KC_TRNS, /* |-----| */   KC_NO, KC_PAST,  KC_P7, KC_P8, KC_P9, KC_PMNS, KC_TRNS,
         KC_TRNS, A(KC_ESC),   C(G(KC_6)), C(G(KC_7)),   C(G(KC_8)), C(G(KC_9)), KC_TRNS, /* |-----| */   KC_NO,   KC_P0,  KC_P4, KC_P5, KC_P6, KC_PPLS, KC_TRNS,
         KC_TRNS,    KC_ESC, LSG(KC_LEFT),     KC_TAB, LSG(KC_RGHT), C(G(KC_0)), /* /////---------------\\\\\ */ KC_PSLS,  KC_P1, KC_P2, KC_P3, KC_PDOT,   TG(5),
-                                                            KC_TRNS,     TG(5), KC_TRNS, /* /-----\ */ KC_PENT,  KC_NUM, KC_ESC),
+                                                           KC_TRNS,      TG(5), KC_TRNS, /* /-----\ */ KC_PENT,  KC_NUM, KC_ESC),
 
 // -----> Legacy layer <-----
     [6] = LAYOUT_split_3x6_3_ex2(
-           KC_T,  KC_TAB, KC_Q, KC_W,    KC_E,    KC_R,   KC_M, /* |-----| */  KC_NO,  KC_NO,  KC_NO,  KC_NO, KC_NO, KC_CAPS, KC_TRNS,
-           KC_G, KC_CAPS, KC_A, KC_S,    KC_D,    KC_F,   KC_I, /* |-----| */  KC_NO,  KC_NO,  KC_NO,  KC_NO, KC_NO,   KC_NO, KC_TRNS,
-        KC_LCTL, KC_LSFT, KC_Z, KC_X,    KC_C,    KC_V, /* ////---------------\\\\ */ QK_REP,  KC_NO, KC_ENT, KC_NO, KC_PSCR,   TG(6),
-                                      KC_LCTL, KC_LALT, KC_SPC, /* /-----\ */ KC_ENT, KC_NO, KC_ESC)
+           KC_M,  KC_TAB, KC_Q, KC_W,    KC_E,    KC_R,   KC_T, /* |-----| */  KC_F5,   KC_1,  KC_3,   KC_5,   KC_7, KC_CAPS, KC_TRNS,
+         KC_ESC, KC_LSFT, KC_A, KC_S,    KC_D,    KC_F,   KC_G, /* |-----| */  KC_F8,   KC_2,  KC_4,   KC_6,   KC_8,   KC_NO, KC_TRNS,
+           KC_I, KC_LCTL, KC_Z, KC_X,    KC_C,    KC_V, /* ////---------------\\\\ */ QK_REP, KC_NO, KC_ENT, KC_ESC, KC_PSCR,   TG(6),
+                                      KC_RCTL, KC_LALT, KC_SPC, /* /-----\ */  TG(6),  TG(6),  TG(6))
 };
 
 
