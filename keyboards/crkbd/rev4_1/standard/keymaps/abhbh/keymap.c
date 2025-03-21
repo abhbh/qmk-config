@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [1] = LAYOUT_split_3x6_3_ex2(
         KC_TRNS, KC_HOME,   C(KC_LEFT),   KC_UP, C(KC_RGHT), KC_PGUP, KC_HOME, /* |------| */   KC_NO,  KC_DEL,                KC_BSPC,    C(KC_BSPC),  OSM(MOD_MEH),       KC_CAPS, KC_TRNS,
         KC_TRNS,  KC_END,      KC_LEFT, KC_DOWN,    KC_RGHT, KC_PGDN,  KC_END, /* |------| */   KC_NO, KC_LGUI,          OSM(MOD_LSFT), OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI), KC_TRNS,
-        KC_TRNS,  KC_ESC, C(S(KC_TAB)),  KC_TAB,  C(KC_TAB),  QK_REP, /* /////----------------\\\\\ */ QK_AREP, OSM(MOD_LCTL|MOD_LSFT),        KC_ENT,        KC_APP,       KC_PSCR,   TG(5),
+        KC_TRNS,  KC_ESC, C(S(KC_TAB)),  KC_TAB,  C(KC_TAB), QK_AREP, /* /////----------------\\\\\ */  QK_REP, OSM(MOD_LCTL|MOD_LSFT),        KC_ENT,        KC_APP,       KC_PSCR,   TG(5),
                                                     KC_TRNS, KC_TRNS, KC_TRNS, /* /------\ */   MO(4),   MO(3),       KC_TRNS),
 
 // -----> Symbols layer <-----
