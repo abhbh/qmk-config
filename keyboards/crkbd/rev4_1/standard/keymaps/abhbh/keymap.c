@@ -40,12 +40,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // -----> Workspace Management and Numpad layer <-----
     [5] = LAYOUT_split_3x6_3_ex2(
-        KC_TRNS, A(KC_TAB),   C(G(KC_2)), C(G(KC_3)),   C(G(KC_4)), C(G(KC_5)), KC_TRNS, /* |-----| */   KC_NO, KC_PAST,  KC_P7, KC_P8, KC_P9, KC_PMNS, KC_TRNS,
-        KC_TRNS, A(KC_ESC),   C(G(KC_6)), C(G(KC_7)),   C(G(KC_8)), C(G(KC_9)), KC_TRNS, /* |-----| */   KC_NO,   KC_P0,  KC_P4, KC_P5, KC_P6, KC_PPLS, KC_TRNS,
-        KC_TRNS,    KC_ESC, LSG(KC_LEFT),     KC_TAB, LSG(KC_RGHT), C(G(KC_0)), /* /////---------------\\\\\ */ KC_PSLS,  KC_P1, KC_P2, KC_P3, KC_PDOT,   TG(5),
+        KC_TRNS, A(KC_TAB),   G(KC_2), G(KC_3),   G(KC_4), G(KC_5), KC_TRNS, /* |-----| */   KC_NO, KC_PAST,  KC_P7, KC_P8, KC_P9, KC_PMNS, KC_TRNS,
+        KC_TRNS, A(KC_ESC),   G(KC_6), G(KC_7),   G(KC_8), G(KC_9), KC_TRNS, /* |-----| */   KC_NO,   KC_P0,  KC_P4, KC_P5, KC_P6, KC_PPLS, KC_TRNS,
+        KC_TRNS,    KC_ESC, LSG(KC_LEFT),     KC_TAB, LSG(KC_RGHT), G(KC_0), /* /////---------------\\\\\ */ KC_PSLS,  KC_P1, KC_P2, KC_P3, KC_PDOT,   TG(5),
                                                            KC_TRNS,      TG(5), KC_TRNS, /* /-----\ */ KC_PENT,  KC_NUM, KC_ESC),
 
-// -----> Legacy layer <-----
+// -----> Legacy;) layer <-----
     [6] = LAYOUT_split_3x6_3_ex2(
            KC_M,  KC_TAB, KC_Q, KC_W,    KC_E,    KC_R,   KC_T, /* |-----| */  KC_F5,   KC_1,  KC_3,   KC_5,   KC_7, KC_CAPS, KC_TRNS,
          KC_ESC, KC_LSFT, KC_A, KC_S,    KC_D,    KC_F,   KC_G, /* |-----| */  KC_F8,   KC_2,  KC_4,   KC_6,   KC_8,   KC_NO, KC_TRNS,
