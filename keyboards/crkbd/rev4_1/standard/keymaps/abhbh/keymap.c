@@ -8,7 +8,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_TAB, KC_Q, KC_W, KC_F, KC_P,  KC_B, KC_LALT, /* |-----| */ KC_RCTL,    KC_J,    KC_L,       KC_U,    KC_Y, KC_QUOT,      KC_BSPC,
                KC_ESC, KC_A, KC_R, KC_S, KC_T,  KC_G,  OSL(5), /* |-----| */ KC_LGUI,    KC_M,    KC_N,       KC_E,    KC_I,    KC_O,       KC_ENT,
         OSM(MOD_RSFT), KC_Z, KC_X, KC_C, KC_D,  KC_V, /* //////-------------\\\\\\ */    KC_K,    KC_H,    KC_COMM,  KC_DOT, KC_SLSH, LT(5,KC_APP),
-                                OSM(MOD_LCTL), MO(1),  KC_SPC, /* /-----\ */ OSM(MOD_LSFT), MO(2), OSM(MOD_LALT)),
+                               OSM(MOD_LCTL), OSL(1),  KC_SPC, /* /-----\ */ OSM(MOD_LSFT), OSL(2), OSM(MOD_LALT)),
 
 // -----> Extend layer <-----
     [1] = LAYOUT_split_3x6_3_ex2(
@@ -54,13 +54,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
+// Emulate ZMK's default behavior for OSM-on-OSL (which was interestingly QMK's old behavior)
+void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
+	if (IS_QK_ONE_SHOT_MOD(keycode) && is_oneshot_layer_active() && record->event.pressed) {
+		clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
+	}
+	return;
+}
+
+
+// Immediately select the hold action for certain keycodes when another key is pressed
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(5,KC_APP):
-            // Immediately select the hold action when another key is pressed.
             return true;
         default:
-            // Do not select the hold action when another key is pressed.
             return false;
     }
 }
