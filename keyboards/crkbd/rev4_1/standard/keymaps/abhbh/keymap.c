@@ -59,16 +59,10 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
 	if (IS_QK_ONE_SHOT_MOD(keycode) && is_oneshot_layer_active() && record->event.pressed) {
 		clear_oneshot_layer_state(ONESHOT_OTHER_KEY_PRESSED);
 	}
-	return;
 }
 
 
 // Immediately select the hold action for certain keycodes when another key is pressed
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(5,KC_APP):
-            return true;
-        default:
-            return false;
-    }
+    return IS_QK_ONE_SHOT_LAYER(keycode) || keycode == LT(5,KC_APP);
 }
