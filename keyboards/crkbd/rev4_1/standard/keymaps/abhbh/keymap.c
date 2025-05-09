@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,   KC_LT, KC_TILD,  KC_EQL,   KC_GT, KC_PERC,  KC_NO, /* |------| */  KC_NO, KC_ASTR,       KC_AMPR,       KC_HASH,       KC_UNDS,        KC_GRV, KC_TRNS,
         KC_TRNS, KC_EXLM, KC_MINS, KC_LPRN, KC_LCBR, KC_LBRC,  KC_NO, /* |------| */  KC_NO,   KC_AT, OSM(MOD_LSFT), OSM(MOD_LCTL), OSM(MOD_LALT), OSM(MOD_LGUI), KC_TRNS,
         KC_TRNS,  KC_DLR, KC_PLUS, KC_RPRN, KC_RCBR, KC_RBRC, /* /////--------------\\\\\ */ KC_CIRC,       KC_PIPE,       KC_SCLN,       KC_COLN,       KC_BSLS,   TG(5),
-                                              KC_TRNS, MO(3), KC_ENT, /* /------\ */ KC_ENT, KC_TRNS,       KC_TRNS),
+                                              KC_TRNS, MO(3),  MO(4), /* /------\ */ KC_ENT, KC_TRNS,       KC_TRNS),
 
 // -----> Adjust and Function layer <-----
     [3] = LAYOUT_split_3x6_3_ex2(
@@ -35,10 +35,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [4] = LAYOUT_split_3x6_3_ex2(
         KC_TRNS,          KC_1,          KC_2,          KC_3,          KC_4,          KC_5, KC_NO, /* |-----| */ KC_NO,    KC_6, KC_7, KC_8, KC_9,    KC_0,  KC_TRNS,
         KC_TRNS, OSM(MOD_LGUI), OSM(MOD_LALT), OSM(MOD_LCTL), OSM(MOD_LSFT),  OSM(MOD_MEH), KC_NO, /* |-----| */ KC_NO,    KC_0, KC_4, KC_5, KC_6, KC_COMM,  KC_TRNS,
-        KC_TRNS,        KC_ESC,        KC_DEL,        KC_TAB,        KC_ENT,        QK_REP, /* ///---------------\\\ */ QK_AREP, KC_1, KC_2, KC_3,  KC_DOT,   KC_APP,
+        KC_TRNS,        KC_ESC,        KC_DEL,        KC_TAB,        KC_ENT,       QK_AREP, /* ///---------------\\\ */  QK_REP, KC_1, KC_2, KC_3,  KC_DOT,   KC_APP,
                                                                             KC_NO, KC_TRNS, KC_NO, /* /-----\ */ KC_TRNS,  KC_0, KC_NO),
 
-// -----> Workspace Management and Numpad layer <-----
+// -----> Workspace Management and Numpad layer <----- // Switch back after MS fixes ctrl+win hotkeys regression
     [5] = LAYOUT_split_3x6_3_ex2(
         KC_TRNS, A(KC_TAB),   G(KC_2), G(KC_3),   G(KC_4), G(KC_5), KC_TRNS, /* |-----| */   KC_NO, KC_PAST,  KC_P7, KC_P8, KC_P9, KC_PMNS, KC_TRNS,
         KC_TRNS, A(KC_ESC),   G(KC_6), G(KC_7),   G(KC_8), G(KC_9), KC_TRNS, /* |-----| */   KC_NO,   KC_P0,  KC_P4, KC_P5, KC_P6, KC_PPLS, KC_TRNS,
