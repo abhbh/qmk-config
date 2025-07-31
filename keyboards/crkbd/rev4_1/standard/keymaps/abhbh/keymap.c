@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [5] = LAYOUT_split_3x6_3_ex2(
         KC_TRNS, G(KC_1),      G(KC_2), G(KC_3),      G(KC_4),   G(KC_5), KC_TRNS, /* |-----| */  KC_NUM, KC_PMNS,  KC_P7, KC_P8, KC_P9,   KC_P0, KC_TRNS,
         KC_TRNS, G(KC_6),      G(KC_7), G(KC_8),      G(KC_9),   G(KC_0), KC_TRNS, /* |-----| */ KC_TRNS, KC_PAST,  KC_P4, KC_P5, KC_P6, KC_PPLS, KC_TRNS,
-        KC_TRNS,  KC_ESC, LSG(KC_LEFT),  KC_TAB, LSG(KC_RGHT), LCG(KC_V), /* /////---------------\\\\\ */ KC_PSLS,  KC_P1, KC_P2, KC_P3, KC_PDOT,   TG(5),
+        KC_TRNS,  KC_ESC, LSG(KC_LEFT),  KC_TAB, LSG(KC_RGHT), LCG(KC_C), /* /////---------------\\\\\ */ KC_PSLS,  KC_P1, KC_P2, KC_P3, KC_PDOT,   TG(5),
                                                           KC_TRNS, TG(5), KC_TRNS, /* /-----\ */  KC_PENT, KC_P0, KC_ESC),
 
 // -----> Legacy;) layer <-----
