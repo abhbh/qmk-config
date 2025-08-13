@@ -12,17 +12,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // -----> Extend layer <-----
     [1] = LAYOUT_split_3x6_3_ex2(
-        KC_TRNS, KC_HOME,  C(KC_LEFT),   KC_UP, C(KC_RGHT), KC_PGUP, KC_HOME, /* |------| */   KC_NO,  KC_DEL, KC_BSPC, C(KC_BSPC),  OS_MEH, KC_CAPS, KC_TRNS,
-        KC_TRNS,  KC_END,     KC_LEFT, KC_DOWN,    KC_RGHT, KC_PGDN,  KC_END, /* |------| */   KC_NO, KC_LGUI, OS_LCTL,    OS_LALT, OS_LGUI, OS_RSFT, KC_TRNS,
+        KC_TRNS, KC_HOME,  C(KC_LEFT),   KC_UP, C(KC_RGHT), KC_PGUP, KC_VOLU, /* |------| */   KC_NO,  KC_DEL, KC_BSPC, C(KC_BSPC),  OS_MEH, KC_CAPS, KC_TRNS,
+        KC_TRNS,  KC_END,     KC_LEFT, KC_DOWN,    KC_RGHT, KC_PGDN, KC_VOLD, /* |------| */   KC_NO, KC_LGUI, OS_LCTL,    OS_LALT, OS_LGUI, OS_RSFT, KC_TRNS,
         KC_TRNS,  KC_ESC, LCS(KC_TAB),  KC_TAB,  C(KC_TAB), QK_AREP, /* /////----------------\\\\\ */  QK_REP,  OS_LCS,     KC_ENT,  KC_APP, KC_PSCR,   TG(5),
-                                                    KC_TRNS, KC_TRNS, KC_TRNS, /* /------\ */   MO(4), MO(3), KC_TRNS),
+                                                    KC_TRNS, KC_TRNS, KC_TRNS, /* /------\ */   MO(3), MO(4), KC_TRNS),
 
 // -----> Symbols layer <-----
     [2] = LAYOUT_split_3x6_3_ex2(
         KC_TRNS,  KC_GRV,  KC_EQL, KC_HASH, KC_EXLM, KC_PERC, RALT(KC_4), /* |------| */  KC_NO, KC_ASTR, KC_AMPR, KC_UNDS, KC_COLN, KC_SCLN, KC_TRNS,
         KC_TRNS, KC_TILD, KC_MINS, KC_LPRN, KC_LCBR, KC_LBRC,      KC_NO, /* |------| */  KC_NO,   KC_AT, OS_LCTL, OS_LALT, OS_LGUI, OS_RSFT, KC_TRNS,
         KC_TRNS,  KC_DLR, KC_PLUS, KC_RPRN, KC_RCBR, KC_RBRC,     /* /////--------------\\\\\ */ KC_CIRC, KC_PIPE,   KC_LT,   KC_GT, KC_BSLS,   TG(5),
-                                                   KC_TRNS, MO(3), MO(4), /* /------\ */ KC_ENT, KC_TRNS, KC_TRNS),
+                                                   KC_TRNS, MO(4), MO(3), /* /------\ */ KC_ENT, KC_TRNS, KC_TRNS),
 
 // -----> Adjust and Function layer <-----
     [3] = LAYOUT_split_3x6_3_ex2(
