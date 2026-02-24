@@ -15,6 +15,15 @@
  */
 #pragma once
 
+// Split keyboard handedness
+// Using EEPROM (generate per-side uf2 in qmk.json build targets)
+// #define EE_HANDS
+// Set Manually
+#define MASTER_RIGHT
+
+/*
+ * QMK key behaviour
+*/
 #define QUICK_TAP_TERM 0
 //#define TAPPING_TERM 100
 #define TAP_CODE_DELAY 10
