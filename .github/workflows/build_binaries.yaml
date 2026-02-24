@@ -11,7 +11,7 @@ jobs:
     uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@main
     with:
       qmk_repo: abhbh/qmk_firmware
-      qmk_ref: sofle_choc_pico
+      qmk_ref: sofle
 
   publish:
     name: 'QMK Userspace Publish'
