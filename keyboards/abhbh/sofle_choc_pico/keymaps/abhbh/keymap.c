@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_HOME,  C(KC_LEFT),   KC_UP, C(KC_RGHT), KC_PGUP, /* |-------------| */  KC_DEL, KC_BSPC, C(KC_BSPC),  OS_MEH,   KC_CAPS,  KC_F12,
         _______,  KC_END,     KC_LEFT, KC_DOWN,    KC_RGHT, KC_PGDN, /* |-------------| */ KC_LGUI, OS_LCTL,    OS_LALT, OS_LGUI,   OS_RSFT, _______,
         _______,  KC_ESC, LCS(KC_TAB),  KC_TAB,  C(KC_TAB), QK_AREP, KC_MPLY, /**/ KC_MPLY,  QK_REP,  OS_LCS, KC_COMM, KC_DOT, KC_SLSH, _______,
-                              OSL(4), OS_LALT, OS_LCTL, _______, KC_SPC, /* /----\ */ OS_LSFT, OSL(3), OS_LGUI, OS_RCTL, OSL(5)),
+                              XXXXXXX, OS_LALT, OS_LCTL, _______, KC_SPC, /* /----\ */ OS_LSFT, MO(3), OS_LGUI, OS_RCTL, XXXXXXX),
 
 
 // -----> Symbols layer <-----
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  KC_GRV,  KC_EQL, KC_HASH, KC_EXLM, KC_PERC, /* |-------------| */ KC_ASTR, KC_AMPR, KC_UNDS, KC_COLN, KC_SCLN, _______,
         _______, KC_TILD, KC_MINS, KC_LPRN, KC_LCBR, KC_LBRC, /* |-------------| */   KC_AT, OS_LCTL, OS_LALT, OS_LGUI, OS_RSFT, _______,
       LCA(KC_4),  KC_DLR, KC_PLUS, KC_RPRN, KC_RCBR, KC_RBRC, KC_MUTE, /**/ KC_MUTE, KC_CIRC, KC_PIPE,   KC_LT,   KC_GT, KC_BSLS, _______,
-                        OSL(4), OS_LALT, OS_LCTL, OSL(3), KC_SPC, /* /----\ */ OS_LSFT, _______, OS_LGUI, OS_RCTL, OSL(5)),
+                        XXXXXXX, OS_LALT, OS_LCTL, MO(3), KC_SPC, /* /----\ */ OS_LSFT, _______, OS_LGUI, OS_RCTL, XXXXXXX),
 
 
 // -----> Adjust and Function layer <-----

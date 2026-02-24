@@ -139,22 +139,22 @@ void render_mod_status_ctrl_shift(uint8_t modifiers) {
 void render_layer_state(void) {
     switch (get_highest_layer(layer_state)) {
         case 0:
-            oled_write_P(PSTR("BASE\n"), false);
+            oled_write_P(PSTR("\n"), false);
             break;
         case 1:
-            oled_write_P(PSTR("EXTEND\n"), false);
+            oled_write_P(PSTR("EXT\n"), false);
             break;
         case 2:
-            oled_write_P(PSTR("SYMBOL\n"), false);
+            oled_write_P(PSTR("SYM\n"), false);
             break;
         case 3:
-            oled_write_P(PSTR("FUNCTN\n"), false);
+            oled_write_P(PSTR("FUNC\n"), false);
             break;
         case 4:
-            oled_write_P(PSTR("WKSPNM\n"), false);
+            oled_write_P(PSTR("WKNM\n"), false);
             break;
         case 5:
-            oled_write_P(PSTR("LEGACY\n"), false);
+            oled_write_P(PSTR("LGCY\n"), false);
             break;
         default:
             // Or use the write_ln shortcut over adding '\n' to the end of your string
@@ -165,20 +165,9 @@ void render_layer_state(void) {
 void render_led_state(void) {
     // Host Keyboard LED Status
     led_t led_state = host_keyboard_led_state();
-    oled_write_P(led_state.num_lock ? PSTR("NUM ") : PSTR("    "), false);
-    oled_write_P(led_state.caps_lock ? PSTR("CAP ") : PSTR("    "), false);
-    oled_write_P(led_state.scroll_lock ? PSTR("SCR ") : PSTR("    "), false);
-}
-
-
-static void render_logo(void) {
-    static const char PROGMEM raw_logo[] ={
-        0,128, 64, 64,  0, 64, 64,128,  0,  0,  0,128, 64, 32, 16,  8,  4,  2,  2,  2,  2,  2,  2,  2,  4, 12, 24,224,  0,  0,  0,  0, 31, 32, 32,224,  0,192,224,249,250,253,253,254,252,240,224,192,128,128,  0,  0,  0,  0,  0,  0,  0,  0,  0,159,  0,  0,  0,  0,  0,  0,254,  1,255,255,255,255,255,255,255,255,255,255,127,127, 63, 63, 63, 31, 31, 31, 14, 14,  6,  2,  0,  3,  2,  4, 56,  0,128, 64, 33, 22, 25,  7, 15, 15, 15,195,225,225,240,240,240,240,248,248,248,248,248,248,248,240,240,224,192,128,  0,240, 14,  0,
-        3,204, 48,192,224,240,248,254,255,255,255,255,255,255, 63, 31, 15, 15, 15,  7, 15, 31,255,255,255,255,255,255,254,225,252,  0,  0, 15,224, 63,255,255,255,255,255,255,255,255,255,252,240,246,246,240,240, 56, 28,127,255,127,255,255,255,255,255, 51,255,  0,  0,  0,253,  2,  1,  3, 15, 31, 63,127,127,127,255,255,225,197,133,129,131,134,252,255,255,254,255,255,255, 63,  3,  0, 31,192,  0,  0,  0,  1,  1,  2,  2,  2,  2,193,225, 96, 98,194,226, 98, 98,227,199, 13, 11, 19, 35, 67, 65, 65, 64, 64, 64, 32, 60,  3, 
-        0,  0,  0,  0,  0,  0,  0,  0,  0,207,207,140,140, 13, 13,140,140,207,207,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 56, 57, 59, 63, 63, 63, 63,187,185,184,128,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 62,127,255,227,  3,  3,  3,  3,113,120, 56, 56,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 12, 30, 30,126,254,254,142,128,128,128,128, 28, 60, 56, 56,  0,  3,  3,  0,  0,  0,  0,  0,  0, 
-        0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,224,241,251,251, 59, 59, 59, 57, 56,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,193,227,231,103,103,119,247,247,247,  0,  0, 60, 42, 42, 42, 42,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,128,128,199,207,223,156, 24, 24, 31, 15,  7,  0,  0,142, 17, 17, 17,142,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 14, 63, 59,113,113,113,127,127,112,112,112,112,  0,  0,  3,  4,  4,100, 99,  0,  0,  0,  0,  0,
-    };
-    oled_write_raw_P(raw_logo, sizeof(raw_logo));
+    oled_write_P(led_state.num_lock ? PSTR("NL ") : PSTR("    "), false);
+    oled_write_P(led_state.caps_lock ? PSTR("CL ") : PSTR("    "), false);
+    oled_write_P(led_state.scroll_lock ? PSTR("SL ") : PSTR("    "), false);
 }
 
 
@@ -194,7 +183,13 @@ bool oled_task_user(void) {
         render_mod_status_gui_alt(get_mods()|get_oneshot_mods());
         render_mod_status_ctrl_shift(get_mods()|get_oneshot_mods());
     } else {
-        render_logo();  // Renders a static logo
+        oled_set_cursor(0, 1);
+        render_layer_state();
+        oled_set_cursor(0, 6);
+        render_led_state();
+        oled_set_cursor(0, 9);
+        render_mod_status_gui_alt(get_mods()|get_oneshot_mods());
+        render_mod_status_ctrl_shift(get_mods()|get_oneshot_mods());
     }
     return false;
 }
