@@ -4,35 +4,6 @@ void render_space(void) {
     oled_write_P(PSTR("     "), false);
 }
 
-/* KEYBOARD PET START */
-
-/* settings */
-#    define MIN_WALK_SPEED      10
-#    define MIN_RUN_SPEED       40
-
-/* advanced settings */
-#    define ANIM_FRAME_DURATION 200  // how long each frame lasts in ms
-#    define ANIM_SIZE           96   // number of bytes in array. If you change sprites, minimize for adequate firmware size. max is 1024
-
-/* timers */
-// static uint16_t key_timer; // timer to track the last keyboard activity
-uint32_t anim_timer = 0;
-uint32_t anim_sleep = 0;
-
-/* current frame */
-uint8_t current_frame = 0;
-
-/* status variables */
-led_t led_usb_state;
-
-bool isSneaking = false;
-bool isBarking = false;
-bool isJumping  = false;
-bool showedJump = true;
-
-
-/* KEYBOARD PET END */
-
 void render_mod_status_gui_alt(uint8_t modifiers) {
     static const char PROGMEM gui_off_1[] = {0x85, 0x86, 0};
     static const char PROGMEM gui_off_2[] = {0xa5, 0xa6, 0};
@@ -166,36 +137,41 @@ void render_mod_status_ctrl_shift(uint8_t modifiers) {
 }
 
 void render_layer_state(void) {
-    static const char PROGMEM default_layer[] = {
-        0x20, 0x94, 0x95, 0x96, 0x20,
-        0x20, 0xb4, 0xb5, 0xb6, 0x20,
-        0x20, 0xd4, 0xd5, 0xd6, 0x20, 0};
-    static const char PROGMEM raise_layer[] = {
-        0x20, 0x97, 0x98, 0x99, 0x20,
-        0x20, 0xb7, 0xb8, 0xb9, 0x20,
-        0x20, 0xd7, 0xd8, 0xd9, 0x20, 0};
-    static const char PROGMEM lower_layer[] = {
-        0x20, 0x9a, 0x9b, 0x9c, 0x20,
-        0x20, 0xba, 0xbb, 0xbc, 0x20,
-        0x20, 0xda, 0xdb, 0xdc, 0x20, 0};
-    static const char PROGMEM adjust_layer[] = {
-        0x20, 0x9d, 0x9e, 0x9f, 0x20,
-        0x20, 0xbd, 0xbe, 0xbf, 0x20,
-        0x20, 0xdd, 0xde, 0xdf, 0x20, 0};
-    if(layer_state_is(3)) {
-        oled_write_P(adjust_layer, false);
-    } else if(layer_state_is(2)) {
-        oled_write_P(lower_layer, false);
-    } else if(layer_state_is(1)) {
-        oled_write_P(raise_layer, false);
-    } else {
-        oled_write_P(default_layer, false);
+    switch (get_highest_layer(layer_state)) {
+        case _BASE:
+            oled_write_P(PSTR("BASE\n"), false);
+            break;
+        case _EXT:
+            oled_write_P(PSTR("EXTEND\n"), false);
+            break;
+        case _SYM:
+            oled_write_P(PSTR("SYMBOL\n"), false);
+            break;
+        case _FUNC:
+            oled_write_P(PSTR("FUNCTN\n"), false);
+            break;
+        case _WKNM:
+            oled_write_P(PSTR("WKSPNM\n"), false);
+            break;
+        case _LGCY:
+            oled_write_P(PSTR("LEGACY\n"), false);
+            break;
+        default:
+            // Or use the write_ln shortcut over adding '\n' to the end of your string
+            oled_write_ln_P(PSTR("Undefined"), false);
     }
+}
+
+void render_led_state(void) {
+    // Host Keyboard LED Status
+    led_t led_state = host_keyboard_led_state();
+    oled_write_P(led_state.num_lock ? PSTR("NUM ") : PSTR("    "), false);
+    oled_write_P(led_state.caps_lock ? PSTR("CAP ") : PSTR("    "), false);
+    oled_write_P(led_state.scroll_lock ? PSTR("SCR ") : PSTR("    "), false);
 }
 
 
 static void render_logo(void) {
-// logo图像，在https://joric.github.io/qle/生成，需要做成32*128大小的，然后把“static const unsigned char”改成“static const char”
     static const char PROGMEM raw_logo[] ={
         0,128, 64, 64,  0, 64, 64,128,  0,  0,  0,128, 64, 32, 16,  8,  4,  2,  2,  2,  2,  2,  2,  2,  4, 12, 24,224,  0,  0,  0,  0, 31, 32, 32,224,  0,192,224,249,250,253,253,254,252,240,224,192,128,128,  0,  0,  0,  0,  0,  0,  0,  0,  0,159,  0,  0,  0,  0,  0,  0,254,  1,255,255,255,255,255,255,255,255,255,255,127,127, 63, 63, 63, 31, 31, 31, 14, 14,  6,  2,  0,  3,  2,  4, 56,  0,128, 64, 33, 22, 25,  7, 15, 15, 15,195,225,225,240,240,240,240,248,248,248,248,248,248,248,240,240,224,192,128,  0,240, 14,  0,
         3,204, 48,192,224,240,248,254,255,255,255,255,255,255, 63, 31, 15, 15, 15,  7, 15, 31,255,255,255,255,255,255,254,225,252,  0,  0, 15,224, 63,255,255,255,255,255,255,255,255,255,252,240,246,246,240,240, 56, 28,127,255,127,255,255,255,255,255, 51,255,  0,  0,  0,253,  2,  1,  3, 15, 31, 63,127,127,127,255,255,225,197,133,129,131,134,252,255,255,254,255,255,255, 63,  3,  0, 31,192,  0,  0,  0,  1,  1,  2,  2,  2,  2,193,225, 96, 98,194,226, 98, 98,227,199, 13, 11, 19, 35, 67, 65, 65, 64, 64, 64, 32, 60,  3, 
@@ -206,18 +182,15 @@ static void render_logo(void) {
 }
 
 
-
 bool oled_task_user(void) {
-    // Renders the current keyboard state (layers and mods)
-        /* KEYBOARD PET VARIABLES START */
 
     if (is_keyboard_master()) {
-        //led_usb_state = host_keyboard_led_state();
 
         oled_set_cursor(0, 1);
-        oled_set_cursor(0, 5);
         render_layer_state();
-        oled_set_cursor(0, 10);
+        oled_set_cursor(0, 6);
+        render_led_state();
+        oled_set_cursor(0, 9);
         render_mod_status_gui_alt(get_mods()|get_oneshot_mods());
         render_mod_status_ctrl_shift(get_mods()|get_oneshot_mods());
     } else {
