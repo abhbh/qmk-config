@@ -138,22 +138,22 @@ void render_mod_status_ctrl_shift(uint8_t modifiers) {
 
 void render_layer_state(void) {
     switch (get_highest_layer(layer_state)) {
-        case _BASE:
+        case 0:
             oled_write_P(PSTR("BASE\n"), false);
             break;
-        case _EXT:
+        case 1:
             oled_write_P(PSTR("EXTEND\n"), false);
             break;
-        case _SYM:
+        case 2:
             oled_write_P(PSTR("SYMBOL\n"), false);
             break;
-        case _FUNC:
+        case 3:
             oled_write_P(PSTR("FUNCTN\n"), false);
             break;
-        case _WKNM:
+        case 4:
             oled_write_P(PSTR("WKSPNM\n"), false);
             break;
-        case _LGCY:
+        case 5:
             oled_write_P(PSTR("LEGACY\n"), false);
             break;
         default:
