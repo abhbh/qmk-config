@@ -45,7 +45,7 @@ void render_layer_state(void) {
             oled_write_P(PSTR("  SYM"), false);
             break;
         case 3:
-            oled_write_P(PSTR(" FUNC"), false);
+            oled_write_P(PSTR("ADJFN"), false);
             break;
         case 4:
             oled_write_P(PSTR("WK&NM"), false);

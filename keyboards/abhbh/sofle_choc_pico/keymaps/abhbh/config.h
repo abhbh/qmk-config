@@ -21,6 +21,7 @@
 // Set Manually
 #define MASTER_RIGHT
 
+// Enable Bootmagic key on the other split side
 #define BOOTMAGIC_ROW_RIGHT 5
 #define BOOTMAGIC_COLUMN_RIGHT 0
 
