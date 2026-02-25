@@ -21,6 +21,9 @@
 // Set Manually
 #define MASTER_RIGHT
 
+#define BOOTMAGIC_ROW_RIGHT 5
+#define BOOTMAGIC_COLUMN_RIGHT 0
+
 /*
  * QMK key behaviour
 */
