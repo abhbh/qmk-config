@@ -26,8 +26,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX,   KC_F1,       KC_F2,   KC_F3,      KC_F4,   KC_F5, /* |-------------| */    KC_F6,   KC_F7,      KC_F8,   KC_F9,    KC_F10,  KC_F11,
         _______, KC_HOME,  C(KC_LEFT),   KC_UP, C(KC_RGHT), KC_PGUP, /* |-------------| */  OS_HYPR,  KC_DEL, C(KC_BSPC), KC_BSPC,   KC_CAPS,  KC_F12,
         _______,  KC_END,     KC_LEFT, KC_DOWN,    KC_RGHT, KC_PGDN, /* |-------------| */   OS_MEH, OS_LCTL,    OS_LALT, OS_LGUI,   OS_RSFT, _______,
-        _______,  KC_ESC, LCS(KC_TAB),  KC_TAB,  C(KC_TAB), QK_AREP, _______, /**/ _______,  QK_REP, XXXXXXX,     KC_ENT,  KC_APP,   KC_PSCR, XXXXXXX,
-                                 _______, _______, _______, _______, KC_BSPC, /**/ _______, MO(3), OS_RGUI, OD_RALT, OS_RCTL),
+        _______,  KC_ESC, LCS(KC_TAB),  KC_TAB,  C(KC_TAB), QK_AREP, _______, /**/ _______,  QK_REP, QK_AREP,     KC_ENT,  KC_APP,   KC_PSCR, XXXXXXX,
+                                 _______, _______, _______, _______, KC_BSPC, /**/ _______, MO(3), OS_RGUI, OS_RALT, OS_RCTL),
 
 
 // -----> Symbols layer <-----
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_TILD, KC_MINS,  KC_EQL,   KC_GT, KC_AMPR, /* |-------------| */  KC_ASTR, KC_HASH, KC_SCLN, KC_COLN,  KC_GRV, _______,
         _______,   KC_AT, KC_UNDS, KC_LPRN, KC_LCBR, KC_LBRC, /* |-------------| */  KC_EXLM, OS_LCTL, OS_LALT, OS_LGUI, OS_RSFT, _______,
       LCA(KC_4), KC_PIPE, KC_PLUS, KC_RPRN, KC_RCBR, KC_RBRC, KC_MPLY, /**/ KC_MPLY,  QK_REP, KC_PERC, KC_CIRC,  KC_DLR, KC_BSLS, XXXXXXX,
-                            _______, _______, _______, MO(3), _______, /**/  KC_ENT, _______, OS_RGUI, OD_RALT, OS_RCTL),
+                            _______, _______, _______, MO(3), _______, /**/  KC_ENT, _______, OS_RGUI, OS_RALT, OS_RCTL),
 
 
 // -----> Adjust and Function layer <-----
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_M,    KC_TAB,  KC_Q,  KC_W,  KC_E,  KC_R, /* |-------------| */  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         KC_ESC, KC_LSFT,  KC_A,  KC_S,  KC_D,  KC_F, /* |-------------| */  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         KC_I,   KC_LCTL,  KC_Z,  KC_X,  KC_C,  KC_V, _______, /**/ _______,  QK_REP,   KC_NO,  KC_ENT,  KC_ESC, KC_PSCR,   TG(5),
-                  XXXXXXX, XXXXXXX, KC_RCTL, KC_LALT, KC_SPC, /**/ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG(5)),
+                        KC_T, KC_G, KC_RCTL, KC_LALT, KC_SPC, /**/ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG(5)),
 
 
 };
