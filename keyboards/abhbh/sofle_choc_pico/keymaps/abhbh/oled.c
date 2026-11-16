@@ -61,9 +61,9 @@ void render_layer_state(void) {
 void render_led_state(void) {
     // Host Keyboard LED Status
     led_t led_state = host_keyboard_led_state();
-    oled_write_P(led_state.num_lock ? PSTR("NUMLK") : PSTR("     "), false);
-    oled_write_P(led_state.scroll_lock ? PSTR("SCRLK") : PSTR("     "), false);
-    oled_write_P(led_state.caps_lock ? PSTR(" CAPS") : PSTR("     "), false);
+    oled_write_P(led_state.num_lock ? PSTR("     ") : PSTR("NLOFF"), false);
+    oled_write_P(led_state.scroll_lock ? PSTR("SLKON") : PSTR("     "), false);
+    oled_write_P(led_state.caps_lock ? PSTR("CAPS!") : PSTR("     "), false);
     
 }
 
